@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect, useState } from 'react';
-import { icon } from '../constatnts';
+import { icon } from '../constants';
 import { Input } from '../ui';
 import { signUserFailure, signUserStart, signUserSuccess } from '../slice/auth';
 import AuthService from '../service/auth';
@@ -28,7 +28,7 @@ const Login = () => {
 		if (loggedIn) {
 			navigate('/');
 		}
-	}, []);
+	}, [loggedIn]);
 	return (
 		<div className='text-center mt-5'>
 			<main className='form-signin w-25 m-auto'>
