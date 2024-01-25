@@ -2,11 +2,7 @@ import { useState } from 'react';
 import { icon } from '../constatnts';
 import { Input } from '../ui';
 import { useSelector, useDispatch } from 'react-redux';
-import {
-	registerUserFailure,
-	registerUserStart,
-	registerUserSuccess,
-} from '../slice/auth';
+import { signUserFailure, signUserStart, signUserSuccess } from '../slice/auth';
 import AuthService from '../service/auth';
 
 const Register = () => {
@@ -18,13 +14,13 @@ const Register = () => {
 	const { isLoading } = useSelector(state => state.auth);
 	const registerHandler = async e => {
 		e.preventDefault();
-		dispatch(registerUserStart());
+		dispatch(signUserStart());
 		const user = { username: name, email, password };
 		try {
 			const response = await AuthService.userRegister(user);
-			dispatch(registerUserSuccess());
+			dispatch(signUserSuccess(response.user));
 		} catch (error) {
-			dispatch(registerUserFailure());
+			dispatch(signUserFailure(error.response.data.errors));
 		}
 	};
 	return (
