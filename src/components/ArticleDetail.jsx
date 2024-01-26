@@ -78,7 +78,7 @@ const ArticleDetail = () => {
 						<div>{articleDetail?.body}</div>
 					</div>
 				</div>
-				)}
+				)
 			</div>
 		)
 	);
