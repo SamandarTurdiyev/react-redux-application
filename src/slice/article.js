@@ -27,7 +27,7 @@ export const articleSlice = createSlice({
 			state.isLoading = false;
 			state.articleDetail = action.payload;
 		},
-		getArticleDetailFailure: state => {
+		getArticleDetailFailure: (state, action) => {
 			state.isLoading = false;
 		},
 	},
