@@ -6,6 +6,7 @@ import {
 	Navbar,
 	ArticleDetail,
 	CreateArticle,
+	EditArticle,
 } from './components';
 import { useEffect } from 'react';
 import AuthService from './service/auth';
@@ -39,6 +40,7 @@ const App = () => {
 					<Route path='/register' element={<Register />} />
 					<Route path='/articles/:slug' element={<ArticleDetail />} />
 					<Route path='/create-article' element={<CreateArticle />} />
+					<Route path='/edit-article/:slug' element={<EditArticle />} />
 				</Routes>
 			</div>
 		</div>

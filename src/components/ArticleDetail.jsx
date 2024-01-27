@@ -32,7 +32,6 @@ const ArticleDetail = () => {
 	) : (
 		articleDetail !== null && (
 			<div>
-				(
 				<div className='py-5 mb-4  rounded-3'>
 					<div className='container-fluid py-5'>
 						<h1 className='display-5 fw-bold'>{articleDetail?.title}</h1>
@@ -78,7 +77,6 @@ const ArticleDetail = () => {
 						<div>{articleDetail?.body}</div>
 					</div>
 				</div>
-				)
 			</div>
 		)
 	);
